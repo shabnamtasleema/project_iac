@@ -1,8 +1,8 @@
-# terraform {
-#   backend "s3" {
-#     bucket = var.bucket
-#     key = var.key
-#     region = var.region
-#     profile = var.profile
-#   }
-# }
+terraform {
+  backend "s3" {
+    bucket = "tf-aws-shabnam"
+    key = var.key
+    region = "us-west-1"
+    profile = "shabnam"
+  }
+}

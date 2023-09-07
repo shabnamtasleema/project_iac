@@ -48,3 +48,14 @@ variable "orchestration" {
 
 }
 
+variable "environment" {
+  
+}
+
+variable "key" {
+  
+}
+
+variable "security_grp" {
+  
+}
