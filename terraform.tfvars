@@ -1,5 +1,4 @@
-access_key = "AKIA42GYR5FF5WK63XTQ"
-secret_key = "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"
+
 
 ami_key_pair_name   = "my-jenkins-key1"
 number_of_instances = 1
