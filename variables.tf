@@ -22,10 +22,6 @@ variable "ami_id" {
   description = "The AMI to use"
 }
 
-variable "number_of_instances" {
-  description = "number of instances to be created"
-  default     = 1
-}
 
 
 variable "ami_key_pair_name" {
@@ -39,3 +35,16 @@ variable "aws_vpc_id" {
 variable "aws_ami_ami" {
 
 }
+
+variable "product_name" {
+
+}
+
+variable "role_name" {
+
+}
+
+variable "orchestration" {
+
+}
+
