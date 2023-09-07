@@ -12,8 +12,7 @@ resource "aws_instance" "ec2_instance" {
   security_groups = [aws_security_group.instance_sc2.id, aws_security_group.instance_sc1.id]
   tags = merge(
     local.tags, {
-      Name = var.instance_name
-
+      Name = var.environment
   })
 }
 
