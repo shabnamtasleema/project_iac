@@ -5,33 +5,24 @@
 # }
 locals {
 
-serverconfig = [
+  serverconfig = [
 
-for server in var.conf : {
-#  [
+    for server in var.conf : {
+      instance_name = server.instance_name
 
-# for i in range(1, server.no_of_instances+1) : {
-
-instance_name = server.instance_name
-
-instance_type = server.instance_type
-}
-# ami = server.ami
-# }
-# ]
-]
+      instance_type = server.instance_type
+    }
+  ]
 }
 
 locals {
-instances = flatten(local.serverconfig)
+  instances = flatten(local.serverconfig)
 }
 
-
-
 resource "aws_instance" "ec2_instance" {
-  for_each = {for server in local.instances: server.instance_name => server}
+  for_each      = { for server in local.instances : server.instance_name => server }
   instance_type = each.value.instance_type
-  
+
   ami             = var.aws_ami_ami
   subnet_id       = var.subnet_id
   key_name        = var.ami_key_pair_name
@@ -40,6 +31,10 @@ resource "aws_instance" "ec2_instance" {
     local.tags, {
       Name = each.value.instance_name
   })
+  user_data = <<EOF
+ apt update -y
+ touch newfile.txt
+ EOF
 }
 
 

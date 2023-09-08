@@ -72,5 +72,5 @@ variable "security_grp" {
 
 variable "conf" {
   description = "The total configuration, List of Objects/Dictionary"
-  default = [{}]
+  default     = [{}]
 }

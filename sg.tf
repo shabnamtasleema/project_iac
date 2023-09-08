@@ -11,7 +11,7 @@ resource "aws_security_group" "instance_sc2" {
       from_port   = ingress.value.port
       to_port     = ingress.value.port
       protocol    = "tcp"
-      cidr_blocks = ["10.0.0.0/8"]
+      cidr_blocks = ["0.0.0.0/0"]
     }
   }
 
