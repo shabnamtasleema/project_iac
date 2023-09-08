@@ -5,6 +5,9 @@
 #   description = "Secret key to AWS console"
 # }
 
+variable "no_of_instance" {
+  default = 1
+}
 
 variable "instance_name" {
   description = "Name of the instance to be created"
@@ -49,13 +52,25 @@ variable "orchestration" {
 }
 
 variable "environment" {
-  
+
 }
 
 variable "key" {
-  
+
 }
 
 variable "security_grp" {
-  
+
+}
+
+# variable "conf" {
+#   type = map(object({
+#     instance_name = string
+#     instance_type = string
+#   }))
+# }
+
+variable "conf" {
+  description = "The total configuration, List of Objects/Dictionary"
+  default = [{}]
 }
