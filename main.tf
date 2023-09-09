@@ -26,7 +26,7 @@ resource "aws_instance" "ec2_instance" {
   ami             = var.aws_ami_ami
   subnet_id       = var.subnet_id
   key_name        = var.ami_key_pair_name
-  security_groups = [aws_security_group.instance_sc2.id, aws_security_group.instance_sc1.id]
+  security_groups = [aws_security_group.instance_sc2.name, aws_security_group.instance_sc1.name]
   tags = merge(
     local.tags, {
       Name = each.value.instance_name
