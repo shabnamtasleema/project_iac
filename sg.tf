@@ -1,5 +1,5 @@
 resource "aws_security_group" "instance_sc2" {
-  name        = "${var.environment}-${var.security_grp}-1"
+  name        = "${var.environment}-${var.security_grp}-3"
   description = "Allow TLS inbound traffic"
   vpc_id      = var.aws_vpc_id
 
@@ -15,7 +15,7 @@ resource "aws_security_group" "instance_sc2" {
     }
   }
   tags = {
-    Name = "${var.environment}-${var.security_grp}-1"
+    Name = "${var.environment}-${var.security_grp}-3"
   }
 }
 
@@ -35,24 +35,24 @@ variable "settings" {
       port = 443
     }
   }
-
-}
-resource "aws_security_group_rule" "alb_to_instance" {
-  type              = "egress"
-  from_port         = 8080
-  to_port           = 8080
-  protocol          = "tcp"
-  security_group_id = aws_security_group.instance_sc1.id
-  cidr_blocks       = ["10.0.0.0/8"]
 }
 
+# resource "aws_security_group_rule" "alb_to_instance" {
+#   type              = "egress"
+#   from_port         = 8080
+#   to_port           = 8080
+#   protocol          = "tcp"
+#   security_group_id = aws_security_group.instance_sc1.id
+#   cidr_blocks       = ["10.0.0.0/8"]
+# }
 
-resource "aws_security_group" "instance_sc1" {
-  name        = "${var.environment}-${var.security_grp}-2"
-  description = "Allow TLS inbound traffic"
-  vpc_id      = var.aws_vpc_id
-  
-  tags = {
-    Name = "${var.environment}-${var.security_grp}-2"
-  }
-}
+
+# resource "aws_security_group" "instance_sc1" {
+#   name        = "${var.environment}-${var.security_grp}-4"
+#   description = "Allow TLS inbound traffic"
+#   vpc_id      = var.aws_vpc_id
+
+#   tags = {
+#     Name = "${var.environment}-${var.security_grp}-4"
+#   }
+# }

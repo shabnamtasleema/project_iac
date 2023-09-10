@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket  = "myawsbucket-shabnam"
+    bucket  = "my-s3-bucket-new-shab"
     key     = var.key
     region  = "us-west-1"
     profile = "shabnam"

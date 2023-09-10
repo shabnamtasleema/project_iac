@@ -74,3 +74,12 @@ variable "conf" {
   description = "The total configuration, List of Objects/Dictionary"
   default     = [{}]
 }
+
+#s3 cars -----
+variable "my_s3" {
+
+}
+
+variable "s3_bucket_name" {
+
+}

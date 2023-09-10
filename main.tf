@@ -23,10 +23,10 @@ resource "aws_instance" "ec2_instance" {
   for_each      = { for server in local.instances : server.instance_name => server }
   instance_type = each.value.instance_type
 
-  ami             = var.aws_ami_ami
-  subnet_id       = var.subnet_id
-  key_name        = var.ami_key_pair_name
-  security_groups = [aws_security_group.instance_sc2.name, aws_security_group.instance_sc1.name]
+  ami                    = var.aws_ami_ami
+  subnet_id              = var.subnet_id
+  key_name               = var.ami_key_pair_name
+  vpc_security_group_ids = [aws_security_group.instance_sc2.id]
   tags = merge(
     local.tags, {
       Name = each.value.instance_name
