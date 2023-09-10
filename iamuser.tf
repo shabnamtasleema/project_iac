@@ -1,7 +1,7 @@
 resource "aws_iam_user" "lb" {
-  name = "loadbalancer"
-  path = "/system/"
-  count = var.environment == "dev"? 1 : 0
+  name  = "loadbalancer1"
+  path  = "/system/"
+  count = var.environment == "dev" ? 1 : 0
   tags = {
     tag-key = "${var.environment}"
   }

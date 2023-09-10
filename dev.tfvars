@@ -10,6 +10,11 @@ key               = "dev/terraform.tfstate"
 environment       = "dev"
 
 
+#----------S3 module vars-----
+my_s3          = "my-first-s3-shabnam"
+s3_bucket_name = "aws-first-s3-shabnam"
+
+
 conf = [
   {
     instance_type = "t2.micro",
