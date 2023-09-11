@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('terraform-validate') {
             steps {
-                echo 'terraform validation'
+                terraform init
+                terraform validate
             }
         }
         stage('terraform-plan') {
