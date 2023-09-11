@@ -83,3 +83,6 @@ variable "my_s3" {
 variable "s3_bucket_name" {
 
 }
+variable "boolean_force_destroy" {
+
+}
