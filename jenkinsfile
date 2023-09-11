@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    stages {
+        stage('terraform-validate') {
+            steps {
+                echo 'terraform validation'
+            }
+        }
+        stage('terraform-plan') {
+            steps {
+                echo 'terraform planning'
+            }
+        }
+        stage('terraform-apply') {
+            steps {
+                echo 'terraform apply stage'
+            }
+        }
+        stage('release') {
+            steps {
+                echo 'terraform releasing the latest'
+            }
+        }
+        
+    }
+}
